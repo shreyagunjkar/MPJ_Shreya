@@ -1,0 +1,46 @@
+class Shapes {
+    double area;
+
+    Shapes(double r) {
+        area = Math.PI * r * r;
+        System.out.println("Area of Circle: " + area);
+    }
+
+    Shapes(double l, double b) {
+        area = l * b;
+        System.out.println("Area of Rectangle: " + area);
+    }
+
+    Shapes(double b, double h, boolean isTriangle) {
+        area = 0.5 * b * h;
+        System.out.println("Area of Triangle: " + area);
+    }
+
+    void findArea(double r) {
+        System.out.println("Area of Circle: " + (Math.PI * r * r));
+    }
+
+    void findArea(double l, double b) {
+        System.out.println("Area of Rectangle: " + (l * b));
+    }
+
+    void findArea(double b, double h, boolean isTriangle) {
+        System.out.println("Area of Triangle: " + (0.5 * b * h));
+    }
+}
+
+public class Main1 {
+    public static void main(String[] args) {
+
+        System.out.println("Constructor Overloading");
+        new Shapes(7.0);
+        new Shapes(5.0, 3.0);
+        new Shapes(6.0, 4.0, true);
+
+        System.out.println("\n Method Overloading");
+        Shapes s = new Shapes(0.0);
+        s.findArea(7.0);
+        s.findArea(5.0, 3.0);
+        s.findArea(6.0, 4.0, true);
+    }
+}
