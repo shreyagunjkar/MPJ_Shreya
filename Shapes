@@ -10,8 +10,8 @@ class Shapes {
         area = l * b;
         System.out.println("Area of Rectangle: " + area);
     }
-  
-    Shapes(double b, double h, int x) {
+
+    Shapes(double b, double h, boolean isTriangle) {
         area = 0.5 * b * h;
         System.out.println("Area of Triangle: " + area);
     }
@@ -24,22 +24,23 @@ class Shapes {
         System.out.println("Area of Rectangle: " + (l * b));
     }
 
-    void findArea(double b, double h, int x) {
+    void findArea(double b, double h, boolean isTriangle) {
         System.out.println("Area of Triangle: " + (0.5 * b * h));
     }
 }
 
 public class Main1 {
     public static void main(String[] args) {
-        System.out.println("--- Constructor Overloading ---");
-        Shapes s1 = new Shapes(7.0);
-        Shapes s2 = new Shapes(5.0, 3.0);
-        Shapes s3 = new Shapes(6.0, 4.0, 1);
 
-        System.out.println("\n--- Method Overloading ---");
-        Shapes s = new Shapes(1); // dummy object
+        System.out.println("Constructor Overloading");
+        new Shapes(7.0);
+        new Shapes(5.0, 3.0);
+        new Shapes(6.0, 4.0, true);
+
+        System.out.println("\n Method Overloading");
+        Shapes s = new Shapes(0.0);
         s.findArea(7.0);
         s.findArea(5.0, 3.0);
-        s.findArea(6.0, 4.0, 1);
+        s.findArea(6.0, 4.0, true);
     }
 }
