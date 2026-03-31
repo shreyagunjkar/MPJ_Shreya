@@ -3,17 +3,14 @@ import java.io.*;
 public class Lab4 {
 
     public static void main(String[] args) {
-        writeToFile("student.txt", "Hello! This is written by a Java program.\nName: Shreya\nRoll No: 59");
+        writeToFile("student.txt", "Hello!\nName: Shreya\nRoll No: 59");
         readFromFile("student.txt");
         readFromFile("notexist.txt");
     }
 
     static void writeToFile(String filename, String content) {
-        try {
-            FileWriter fw = new FileWriter(filename);
-            BufferedWriter bw = new BufferedWriter(fw);
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename))) {
             bw.write(content);
-            bw.close();
             System.out.println("File written successfully.\n");
         } catch (IOException e) {
             System.out.println("Error writing file: " + e.getMessage());
@@ -21,22 +18,19 @@ public class Lab4 {
     }
 
     static void readFromFile(String filename) {
-        try {
-            FileReader fr = new FileReader(filename);
-            BufferedReader br = new BufferedReader(fr);
+        System.out.println("Reading file: " + filename);
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
-            System.out.println("Reading file: " + filename);
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
             }
-            br.close();
-            System.out.println();
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + filename);
         } catch (IOException e) {
             System.out.println("Error reading file: " + e.getMessage());
-        } finally {
-            System.out.println("Done trying to read: " + filename + "\n");
         }
+
+        System.out.println("Done trying to read: " + filename + "\n");
     }
 }
