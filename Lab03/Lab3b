@@ -2,22 +2,18 @@ class Hillstations {
     void famousfood() {
         System.out.println("Famous food of this hill station");
     }
-
     void famousfor() {
         System.out.println("This hill station is famous for something");
     }
 }
-
 class Manali extends Hillstations {
     void famousfood() {
         System.out.println("Manali- Famous for Sidu, Babru, and Aktori");
     }
-
     void famousfor() {
         System.out.println("Manali- Famous for snow, adventure sports and Rohtang Pass");
     }
 }
-
 class Ooty extends Hillstations {
     void famousfood() {
         System.out.println("Ooty- Famous for homemade chocolates and Varkey");
@@ -27,18 +23,15 @@ class Ooty extends Hillstations {
         System.out.println("Ooty- Famous for tea gardens and Nilgiri Mountain Railway");
     }
 }
-
 class Darjeeling extends Hillstations {
     void famousfood() {
         System.out.println("Darjeeling- Famous for momos and Darjeeling tea");
     }
-
     void famousfor() {
         System.out.println("Darjeeling- Famous for tea plantations and Tiger Hill sunrise");
     }
 }
-
-public class Demo {
+public class Lab3b {
     public static void main(String[] args) {
         Hillstations h;
 
